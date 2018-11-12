@@ -16,7 +16,7 @@ get '/leon' do
 end
 
 get '/cat' do
-  "<div style='border: 150px dashed green'>
-     <img src='http://bit.ly/1eze8aE'>
-   </div>"
+  erb "Hi there, Visitor <% 2 + 2 %>!"
+
+  erb(:index)
 end
