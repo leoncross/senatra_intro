@@ -3,20 +3,12 @@ require 'shotgun'
 
 set :session_secret, 'super secret'
 
-get '/' do
-  "hello world"
+get '/cat-form' do
+  erb :cat_form
 end
 
-get '/secret' do
-  "YO"
-end
-
-get '/leon' do
-  "hello hello"
-end
-
-get '/cat' do
-  erb "Hi there, Visitor <% 2 + 2 %>!"
-
-  erb(:index)
+post '/named-cat' do
+  p params
+  @name = params[:name]
+  erb :index
 end
